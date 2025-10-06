@@ -76,6 +76,11 @@ jobs:
         with:
           name: neri-apk
           path: app/build/outputs/apk/release/**/*.apk
+          
+      - name: Check APK files before upload
+        run: |
+          ls -al app/build/outputs/apk/release/
+
 
   upload-telegram:
     needs: build
